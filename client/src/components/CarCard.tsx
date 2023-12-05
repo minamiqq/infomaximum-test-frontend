@@ -9,7 +9,7 @@ type Props = Car
 
 const CarCard: FC<Props> = observer(({brand, model, model_year, color, img_src, price, availability, description, id}) => {  
   const { setFavouriteCar, deleteFavouriteCar, favourites } = store
-  const [favourite, setFavourite] = useState<boolean>(false)
+  const [favourite, setFavourite] = useState<boolean>(favourites.some((car: Car) => car.id === id))
   return (
     <div css={CAR_CARD_STYLES.carCard}>
       <div css={[CAR_CARD_STYLES.imgContainer, {position: "relative"}]}>

@@ -4,7 +4,7 @@ import { Car, Maybe, Scalars } from "../graphql/generated"
 
 class Catalog {
   catalog: Maybe<Array<Car>> = []
-  favourites: Array<Car> = JSON.parse(localStorage.getItem("favourites")!)
+  favourites: Array<Car> = JSON.parse(localStorage.getItem("favourites")!) || []
   searchedCars: Array<Car> = []
 
   constructor() {
